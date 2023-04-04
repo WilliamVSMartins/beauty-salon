@@ -1,0 +1,139 @@
+:root {
+    /* HEX color mode */
+    --primary-color: #69b99d;
+    --second-color: #cdf4e6;
+    --text-color: #757575;
+    --title-color: #0f241d;
+    --body-color: #fafafa;
+
+    /* fonts */
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
+}
+
+/* CSS RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font: 400 1rem var(--body-font);
+    color: var(--text-color);
+    background: var(--body-color);
+}
+  
+h1,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-item {
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+}
+
+/* CSS COMPONENTS */
+.container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+  
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+  
+/* NAV */
+#header {
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 2rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--body-color);
+    width: 100%;
+}
+
+.logo {
+    font: 700 1.6rem var(--title-font);
+    color: var(--title-color);
+}
+  
+.logo span {
+    color: var(--primary-color);
+}
+
+nav {
+    height: 4.5rem; /* 72px / 16 = 4.5rem */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a:hover{
+    padding-bottom: 1.6rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+nav .menu {
+    opacity: 0;
+    visibility: hidden;
+    top: -20rem;
+    transition: 0.2s;
+}
+  
+  nav .menu ul {
+    display: none;
+}
+  
+/* MEDIAS QUERIES */
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* nav */
+    nav .menu {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
+  
+    nav .menu ul {
+      display: flex;
+      gap: 2rem;
+    }
+  
+    nav .menu ul li a.menu-item {
+      font: 400 1rem var(--body-font);
+    }
+  
+    nav .menu ul li a.menu-item {
+      font-weight: bold;
+    }
+}
+
